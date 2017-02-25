@@ -1,7 +1,5 @@
 package collins.john;
 
-import java.util.LinkedList;
-
 /**
  * Created by johncollins on 2/24/17.
  */
@@ -9,6 +7,7 @@ public class MyLinkedList<T>
 {
     //MyNode node;
     MyNode head;
+    int sizeIndexMax = 0;
 
 
     public void myAdd(T element)
@@ -17,11 +16,14 @@ public class MyLinkedList<T>
         if (head == null)
         {
             head = new MyNode(element);
+            head.index = sizeIndexMax;
 
         } else
         {
             MyNode newNode = new MyNode(element);
             newNode.next = head;
+            newNode.index = sizeIndexMax++;
+            sizeIndexMax = newNode.index;
             head = newNode;
         }
 
@@ -58,6 +60,5 @@ public class MyLinkedList<T>
             return next;
         }
     }
-     LinkedList<Integer> fakeList = new LinkedList<>();
-    fakeList.
+     
 }
